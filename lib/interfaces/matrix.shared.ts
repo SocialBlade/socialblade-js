@@ -5,6 +5,15 @@ export interface Data<Id, General, Statistics, Ranks> {
   ranks: Ranks;
 }
 
+export interface Id {
+  id: string;
+  username: string;
+}
+
+export interface ExtendedId extends Id {
+  display_name: string;
+}
+
 export interface Grade {
   color: string;
   grade: string;

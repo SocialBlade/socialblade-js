@@ -1,18 +1,37 @@
-import { Data, Daily, Misc, UserGeneral } from './matrix.shared';
-import { General, Ranks } from './twitter.shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  ExtendedId,
+  Branding,
+  Statistics,
+  UserGeneral,
+} from './matrix.shared';
+import { TwitterGeneral, TwitterRanks, TwitterTotal } from './twitter.shared';
 
-export type TwitterGeneral = General & UserGeneral<TwitterBranding>;
+export type TwitterUserGeneral = TwitterGeneral & UserGeneral<TwitterBranding>;
 
 export interface TwitterUser
-  extends Data<Id, TwitterGeneral, Statistics, Ranks> {
+  extends Data<
+    ExtendedId,
+    TwitterUserGeneral,
+    Statistics<TwitterTotal>,
+    TwitterRanks
+  > {
   misc: TwitterMisc;
   tags: string[];
   daily: TwitterDaily[];
 }
 
+export interface TwitterBranding extends Branding {
+  website: string;
+}
+
 export interface TwitterDaily extends Daily {
-  subs: number;
-  views: number;
+  followers: number;
+  following: number;
+  tweets: number;
+  favorites: number;
 }
 
 export interface TwitterMisc extends Misc {

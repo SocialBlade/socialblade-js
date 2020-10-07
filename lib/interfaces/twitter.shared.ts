@@ -1,7 +1,17 @@
-export interface General {
-  twitter_id: number;
-  full_name: string;
+export interface TwitterGeneral {
   created_at: Date;
 }
 
-export interface Ranks {}
+export interface TwitterRanks {
+  sbrank: number;
+  followers: number;
+  following: number;
+  tweets: number;
+  engagement: number;
+}
+
+export interface TwitterTotal {
+  followers: number;
+  following: number;
+  tweets: number;
+}

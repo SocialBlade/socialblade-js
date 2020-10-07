@@ -3,25 +3,25 @@ import {
   Daily,
   Misc,
   Statistics,
-  UserGeneral,
   Branding,
+  UserGeneral,
 } from './matrix.shared';
-import { Id, General, Ranks, Total } from './youtube.shared';
+import { General, Ranks, Total, YouTubeId } from './youtube.shared';
 
-export type YouTubeGeneral = General & UserGeneral<YouTubeUserBranding>;
+export type YouTubeUserGeneral = General & UserGeneral<YouTubeBranding>;
 
 export interface YouTubeUser
-  extends Data<Id, YouTubeGeneral, UserStatistics, Ranks> {
+  extends Data<YouTubeId, YouTubeUserGeneral, YouTubeStatistics, Ranks> {
   misc: YouTubeMisc;
   daily: YouTubeDaily[];
 }
 
-export interface YouTubeUserBranding extends Branding {
+export interface YouTubeBranding extends Branding {
   website: string;
-  social: Social;
+  social: YouTubeSocial;
 }
 
-export interface Social {
+export interface YouTubeSocial {
   facebook: string | null;
   twitter: string | null;
   twitch: string | null;
@@ -40,7 +40,7 @@ export interface YouTubeMisc extends Misc {
   tags: string[];
 }
 
-export interface GrowthNumbers {
+export interface YouTubeGrowthNumbers {
   '1': number;
   '3': number;
   '7': number;
@@ -52,11 +52,11 @@ export interface GrowthNumbers {
   '365': number;
 }
 
-export interface Growth {
-  subs: GrowthNumbers;
-  views: GrowthNumbers;
+export interface YouTubeGrowth {
+  subs: YouTubeGrowthNumbers;
+  views: YouTubeGrowthNumbers;
 }
 
-export interface UserStatistics extends Statistics<Total> {
-  growth: Growth;
+export interface YouTubeStatistics extends Statistics<Total> {
+  growth: YouTubeGrowth;
 }

@@ -1,8 +1,7 @@
-export interface Id {
-  id: string;
-  username: string;
+import { ExtendedId } from './matrix.shared';
+
+export interface YouTubeId extends ExtendedId {
   cusername: string;
-  display_name: string;
 }
 
 export interface General {

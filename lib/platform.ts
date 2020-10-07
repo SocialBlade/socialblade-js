@@ -1,12 +1,27 @@
+import {
+  YouTubeTop,
+  YouTubeTopFilters,
+  YouTubeUser,
+} from './interfaces/youtube';
+import {
+  TwitterTop,
+  TwitterTopFilters,
+  TwitterUser,
+} from './interfaces/twitter';
 import { Matrix } from './matrix';
-import { TwitterUser } from './interfaces/twitter.user';
-import { TwitterTop } from './interfaces/twitter.top';
 
-export class Twitter {
+export type YouTube = Platform<YouTubeUser, YouTubeTop, YouTubeTopFilters>;
+export type Twitter = Platform<TwitterUser, TwitterTop, TwitterTopFilters>;
+
+export class Platform<U, T, F> {
   private api: Matrix;
+  private platform: string;
+  private defaultFilter: F;
 
-  constructor(api: Matrix) {
+  constructor(api: Matrix, platform: string, defaultFilter: F) {
     this.api = api;
+    this.platform = platform;
+    this.defaultFilter = defaultFilter;
   }
 
   /**
@@ -18,8 +33,8 @@ export class Twitter {
   public async user(
     query: string,
     history: 'default' | 'extended' | 'archive' = 'default',
-  ): Promise<TwitterUser> {
-    const req = await this.api.get<TwitterUser>('twitter/statistics', {
+  ): Promise<U> {
+    const req = await this.api.get<U>(`${this.platform}/statistics`, {
       query,
       history,
     });
@@ -36,10 +51,10 @@ export class Twitter {
    * Credit break down can be found at https://socialblade.com/b/docs/top-general
    */
   public async top(
-    query: 'subscribers' | 'views' | 'sbrank' = 'subscribers',
+    query: F = this.defaultFilter,
     page: number = 0,
-  ): Promise<TwitterTop[]> {
-    const req = await this.api.get<TwitterTop[]>('twitter/top', {
+  ): Promise<T[]> {
+    const req = await this.api.get<T[]>(`${this.platform}/top`, {
       query,
       page,
     });

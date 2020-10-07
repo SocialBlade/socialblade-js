@@ -1,4 +1,5 @@
-import { Data, Statistics } from './matrix.shared';
-import { Id, General, Ranks, Total } from './youtube.shared';
+import { Data, ExtendedId, Statistics } from './matrix.shared';
+import { General, Ranks, Total } from './youtube.shared';
 
-export type YouTubeTop = Data<Id, General, Statistics<Total>, Ranks>;
+export type YouTubeTopFilters = 'subscribers' | 'views' | 'sbrank';
+export type YouTubeTop = Data<ExtendedId, General, Statistics<Total>, Ranks>;
