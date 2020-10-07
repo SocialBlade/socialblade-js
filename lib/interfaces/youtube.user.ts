@@ -1,14 +1,33 @@
-import { Data, Daily, Misc, Statistics, UserGeneral } from './matrix.shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  Statistics,
+  UserGeneral,
+  Branding,
+} from './matrix.shared';
 import { Id, General, Ranks, Total } from './youtube.shared';
 
-export type YouTubeGeneral = General & UserGeneral;
+export type YouTubeGeneral = General & UserGeneral<YouTubeUserBranding>;
 
 export interface YouTubeUser
   extends Data<Id, YouTubeGeneral, UserStatistics, Ranks> {
   misc: YouTubeMisc;
-  social: Social;
-  tags: string[];
   daily: YouTubeDaily[];
+}
+
+export interface YouTubeUserBranding extends Branding {
+  website: string;
+  social: Social;
+}
+
+export interface Social {
+  facebook: string | null;
+  twitter: string | null;
+  twitch: string | null;
+  instagram: string | null;
+  linkedin: string | null;
+  discord: string | null;
 }
 
 export interface YouTubeDaily extends Daily {
@@ -18,16 +37,7 @@ export interface YouTubeDaily extends Daily {
 
 export interface YouTubeMisc extends Misc {
   made_for_kids: boolean;
-  external: string;
-}
-
-export interface Social {
-  facebook: string;
-  twitter: string;
-  twitch: string;
-  instagram: string;
-  linkedin: string;
-  discord: string;
+  tags: string[];
 }
 
 export interface GrowthNumbers {

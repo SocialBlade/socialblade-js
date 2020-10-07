@@ -1,20 +1,19 @@
+export interface Id {
+  id: string;
+  username: string;
+  cusername: string;
+  display_name: string;
+}
+
 export interface General {
-  channelid: string;
-  displayname: string;
   created_at: Date;
-  channeltype: string;
+  channel_type: string;
   geo: Geo;
 }
 
 export interface Geo {
   country_code: string;
   country: string;
-}
-
-export interface Id {
-  channelid: string;
-  username: string;
-  cusername: string;
 }
 
 export interface Total {
@@ -24,9 +23,9 @@ export interface Total {
 }
 
 export interface Ranks {
-  rank_sbrank: number;
-  rank_subscribers: number;
-  rank_views: number;
-  rank_country: number;
-  rank_channeltype: number;
+  sbrank: number;
+  subscribers: number;
+  views: number;
+  country: number;
+  channel_type: number;
 }
