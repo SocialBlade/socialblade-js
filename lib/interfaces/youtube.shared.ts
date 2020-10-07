@@ -18,7 +18,7 @@ export interface Geo {
 export interface Total {
   uploads: number;
   subscribers: number;
-  vidviews: number;
+  views: number;
 }
 
 export interface Ranks {
