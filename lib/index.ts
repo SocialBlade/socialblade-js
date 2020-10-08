@@ -9,3 +9,6 @@ export * from './interfaces/youtube';
 
 // Twitter
 export * from './interfaces/twitter';
+
+// Twitch
+export * from './interfaces/twitch';

@@ -1,0 +1,38 @@
+import {
+  Data,
+  Daily,
+  Misc,
+  Statistics,
+  Branding,
+  UserGeneral,
+  ExtendedId,
+} from './matrix.shared';
+import { TwitchGeneral, TwitchRanks, TwitchTotal } from './twitch.shared';
+
+export type TwitchUserGeneral = TwitchGeneral & UserGeneral<Branding>;
+
+export interface TwitchUser
+  extends Data<
+    ExtendedId,
+    TwitchUserGeneral,
+    Statistics<TwitchTotal>,
+    TwitchRanks
+  > {
+  misc: TwitchMisc;
+  daily: TwitchDaily[];
+}
+
+export interface TwitchDaily extends Daily {
+  followers: number;
+  views: number;
+}
+
+export interface TwitchMisc extends Misc {
+  mature_warning: boolean;
+  recent: TwitchRecent;
+}
+
+export interface TwitchRecent {
+  game: string;
+  status: string;
+}

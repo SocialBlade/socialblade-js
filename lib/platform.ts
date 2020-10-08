@@ -9,9 +9,11 @@ import {
   TwitterUser,
 } from './interfaces/twitter';
 import { Matrix } from './matrix';
+import { TwitchTop, TwitchTopFilters, TwitchUser } from './interfaces/twitch';
 
 export type YouTube = Platform<YouTubeUser, YouTubeTop, YouTubeTopFilters>;
 export type Twitter = Platform<TwitterUser, TwitterTop, TwitterTopFilters>;
+export type Twitch = Platform<TwitchUser, TwitchTop, TwitchTopFilters>;
 
 export class Platform<U, T, F> {
   private api: Matrix;
