@@ -6,12 +6,17 @@ import {
   Branding,
   UserGeneral,
 } from './matrix.shared';
-import { General, Ranks, Total, YouTubeId } from './youtube.shared';
+import {
+  YouTubeGeneral,
+  YouTubeRanks,
+  YouTubeTotal,
+  YouTubeId,
+} from './youtube.shared';
 
-export type YouTubeUserGeneral = General & UserGeneral<YouTubeBranding>;
+export type YouTubeUserGeneral = YouTubeGeneral & UserGeneral<YouTubeBranding>;
 
 export interface YouTubeUser
-  extends Data<YouTubeId, YouTubeUserGeneral, YouTubeStatistics, Ranks> {
+  extends Data<YouTubeId, YouTubeUserGeneral, YouTubeStatistics, YouTubeRanks> {
   misc: YouTubeMisc;
   daily: YouTubeDaily[];
 }
@@ -57,6 +62,6 @@ export interface YouTubeGrowth {
   views: YouTubeGrowthNumbers;
 }
 
-export interface YouTubeStatistics extends Statistics<Total> {
+export interface YouTubeStatistics extends Statistics<YouTubeTotal> {
   growth: YouTubeGrowth;
 }

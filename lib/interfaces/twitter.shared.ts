@@ -1,6 +1,6 @@
 export interface TwitterGeneral {
   created_at: Date;
-  geo: Geo;
+  geo: TwitterGeo;
 }
 
 export interface TwitterRanks {
@@ -11,7 +11,7 @@ export interface TwitterRanks {
   engagement: number;
 }
 
-export interface Geo {
+export interface TwitterGeo {
   location: string;
 }
 

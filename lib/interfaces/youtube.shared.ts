@@ -4,24 +4,24 @@ export interface YouTubeId extends ExtendedId {
   cusername: string;
 }
 
-export interface General {
+export interface YouTubeGeneral {
   created_at: Date;
   channel_type: string;
-  geo: Geo;
+  geo: YouTubeGeo;
 }
 
-export interface Geo {
+export interface YouTubeGeo {
   country_code: string;
   country: string;
 }
 
-export interface Total {
+export interface YouTubeTotal {
   uploads: number;
   subscribers: number;
   views: number;
 }
 
-export interface Ranks {
+export interface YouTubeRanks {
   sbrank: number;
   subscribers: number;
   views: number;
