@@ -1,4 +1,4 @@
-import { ExtendedId } from './matrix.shared';
+import { ExtendedId } from '../matrix.shared';
 
 export interface YouTubeId extends ExtendedId {
   cusername: string;

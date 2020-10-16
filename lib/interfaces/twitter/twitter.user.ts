@@ -6,7 +6,7 @@ import {
   Branding,
   Statistics,
   UserGeneral,
-} from './matrix.shared';
+} from '../matrix.shared';
 import { TwitterGeneral, TwitterRanks, TwitterTotal } from './twitter.shared';
 
 export type TwitterUserGeneral = TwitterGeneral & UserGeneral<TwitterBranding>;

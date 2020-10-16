@@ -6,7 +6,7 @@ import {
   Branding,
   UserGeneral,
   ExtendedId,
-} from './matrix.shared';
+} from '../matrix.shared';
 import { TwitchGeneral, TwitchRanks, TwitchTotal } from './twitch.shared';
 
 export type TwitchUserGeneral = TwitchGeneral & UserGeneral<Branding>;

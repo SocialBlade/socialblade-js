@@ -43,7 +43,7 @@ describe('Twitch Client API', function () {
       expect((this.sbTop as TwitchTop[]).length).to.be.eq(5);
     });
 
-    it('All users should have more the 10m followers', async function () {
+    it('All users should have more the 600k followers', async function () {
       (this.sbTop as TwitchTop[]).map((user) =>
         expect(user.statistics.total.followers).to.be.greaterThan(6e6),
       );

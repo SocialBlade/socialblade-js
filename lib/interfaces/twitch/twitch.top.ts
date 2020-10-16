@@ -1,4 +1,4 @@
-import { Data, ExtendedId, Statistics } from './matrix.shared';
+import { Data, ExtendedId, Statistics } from '../matrix.shared';
 import { TwitchGeneral, TwitchRanks, TwitchTotal } from './twitch.shared';
 
 export type TwitchTopFilters = 'followers' | 'views';

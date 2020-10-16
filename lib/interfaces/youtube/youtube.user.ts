@@ -5,7 +5,7 @@ import {
   Statistics,
   Branding,
   UserGeneral,
-} from './matrix.shared';
+} from '../matrix.shared';
 import {
   YouTubeGeneral,
   YouTubeRanks,
