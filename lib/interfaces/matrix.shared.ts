@@ -28,8 +28,11 @@ export interface Daily {
   date: Date;
 }
 
-export interface Branding {
+export interface SmallBranding {
   avatar: string;
+}
+
+export interface Branding extends SmallBranding {
   banner: string;
 }
 

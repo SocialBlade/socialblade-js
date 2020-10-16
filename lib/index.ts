@@ -12,3 +12,6 @@ export * from './interfaces/twitter';
 
 // Twitch
 export * from './interfaces/twitch';
+
+// TikTok
+export * from './interfaces/tiktok';
