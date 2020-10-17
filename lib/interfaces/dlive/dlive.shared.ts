@@ -1,18 +1,20 @@
-export interface TwitchGeneral {
-  geo: TwitchGeo;
+export interface DLiveGeneral {
+  geo: DLiveGeo;
 }
 
-export interface TwitchGeo {
-  broadcaster_language: string;
+export interface DLiveGeo {
+  id: number;
+  code: string | null;
+  language: string | null;
 }
 
-export interface TwitchTotal {
+export interface DLiveTotal {
   followers: number;
-  views: number;
+  following: number;
+  videos: number;
+  earnings: number;
 }
 
-export interface TwitchRanks {
+export interface DLiveRanks extends DLiveTotal {
   sbrank: number;
-  followers: number;
-  views: number;
 }

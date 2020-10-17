@@ -15,3 +15,6 @@ export * from './interfaces/twitch';
 
 // TikTok
 export * from './interfaces/tiktok';
+
+// DLive
+export * from './interfaces/dlive';

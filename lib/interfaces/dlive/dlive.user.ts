@@ -3,36 +3,36 @@ import {
   Daily,
   Misc,
   Statistics,
-  Branding,
   UserGeneral,
-  ExtendedId,
+  Id,
+  SmallBranding,
 } from '../matrix.shared';
-import { TwitchGeneral, TwitchRanks, TwitchTotal } from './twitch.shared';
+import { DLiveGeneral, DLiveRanks, DLiveTotal } from './dlive.shared';
 
-export type TwitchUserGeneral = TwitchGeneral & UserGeneral<Branding>;
+export type DLiveUserGeneral = DLiveGeneral & UserGeneral<SmallBranding>;
 
-export interface TwitchUser
-  extends Data<
-    ExtendedId,
-    TwitchUserGeneral,
-    Statistics<TwitchTotal>,
-    TwitchRanks
-  > {
-  misc: TwitchMisc;
-  daily: TwitchDaily[];
+export interface DLiveUser
+  extends Data<Id, DLiveUserGeneral, Statistics<DLiveTotal>, DLiveRanks> {
+  misc: DLiveMisc;
+  daily: DLiveDaily[];
 }
 
-export interface TwitchDaily extends Daily {
+export interface DLiveDaily extends Daily {
   followers: number;
-  views: number;
+  following: number;
+  videos: number;
+  earnings: number;
 }
 
-export interface TwitchMisc extends Misc {
-  mature_warning: boolean;
-  recent: TwitchRecent;
+export interface DLiveMisc extends Misc {
+  age_restriction: boolean;
+  is_partner: boolean;
+  recent: DLiveRecent;
 }
 
-export interface TwitchRecent {
-  game: string;
-  status: string;
+export interface DLiveRecent {
+  id: number;
+  name: string | null;
+  cover: string | null;
+  background: string | null;
 }

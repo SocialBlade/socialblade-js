@@ -1,11 +1,12 @@
 import { Options } from './interfaces/options';
 import { Matrix } from './matrix';
-import { PlatformWithTop } from './platform';
+import { Platform, PlatformWithTop } from './platform';
 
 import { YouTubeTop, YouTubeTopFilters, YouTubeUser } from './interfaces/youtube';
 import { TwitterTop, TwitterTopFilters, TwitterUser } from './interfaces/twitter';
 import { TwitchTop, TwitchTopFilters, TwitchUser } from './interfaces/twitch';
 import { TikTokTop, TikTokTopFilters, TikTokUser } from './interfaces/tiktok';
+import { DLiveUser } from './interfaces/dlive';
 
 export default class SocialBlade {
   private api: Matrix;
@@ -13,6 +14,7 @@ export default class SocialBlade {
   public twitter: PlatformWithTop<TwitterUser, TwitterTop, TwitterTopFilters>;
   public twitch: PlatformWithTop<TwitchUser, TwitchTop, TwitchTopFilters>;
   public tiktok: PlatformWithTop<TikTokUser, TikTokTop, TikTokTopFilters>;
+  public dlive: Platform<DLiveUser>;
 
   constructor(client_id: string, access_token: string, options: Options = {}) {
     this.api = new Matrix(client_id, access_token, options);
@@ -21,5 +23,6 @@ export default class SocialBlade {
     this.twitter = new PlatformWithTop<TwitterUser, TwitterTop, TwitterTopFilters>(this.api, 'twitter', 'followers');
     this.twitch = new PlatformWithTop<TwitchUser, TwitchTop, TwitchTopFilters>(this.api, 'twitch', 'followers');
     this.tiktok = new PlatformWithTop<TikTokUser, TikTokTop, TikTokTopFilters>(this.api, 'tiktok', 'followers');
+    this.dlive = new Platform<DLiveUser>(this.api, 'dlive');
   }
 }
