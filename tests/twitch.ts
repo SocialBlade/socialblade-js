@@ -6,10 +6,7 @@ import { expect } from 'chai';
 
 describe('Twitch Client API', function () {
   before('Create Social Blade Client', async function () {
-    this.client = new SocialBlade(
-      process.env.SOCIALBLADE_CLIENT_ID!,
-      process.env.SOCIALBLADE_ACCESS_TOKEN!,
-    );
+    this.client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
   });
 
   describe('Twitch User', function () {
@@ -18,15 +15,11 @@ describe('Twitch Client API', function () {
     });
 
     it('Social Blade has more than 50 subs?', async function () {
-      expect(
-        (this.sbStats as TwitchUser).statistics.total.followers,
-      ).to.be.greaterThan(50);
+      expect((this.sbStats as TwitchUser).statistics.total.followers).to.be.greaterThan(50);
     });
 
     it('followers should be a number', async function () {
-      expect((this.sbStats as TwitchUser).statistics.total.followers).to.be.a(
-        'number',
-      );
+      expect((this.sbStats as TwitchUser).statistics.total.followers).to.be.a('number');
     });
 
     it('History should contain 30 days', async function () {
@@ -44,9 +37,7 @@ describe('Twitch Client API', function () {
     });
 
     it('All users should have more the 600k followers', async function () {
-      (this.sbTop as TwitchTop[]).map((user) =>
-        expect(user.statistics.total.followers).to.be.greaterThan(6e6),
-      );
+      (this.sbTop as TwitchTop[]).map((user) => expect(user.statistics.total.followers).to.be.greaterThan(6e6));
     });
   });
 });

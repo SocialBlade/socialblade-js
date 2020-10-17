@@ -1,22 +1,9 @@
-import {
-  Data,
-  Daily,
-  Misc,
-  Statistics,
-  Branding,
-  UserGeneral,
-} from '../matrix.shared';
-import {
-  YouTubeGeneral,
-  YouTubeRanks,
-  YouTubeTotal,
-  YouTubeId,
-} from './youtube.shared';
+import { Data, Daily, Misc, Statistics, Branding, UserGeneral } from '../matrix.shared';
+import { YouTubeGeneral, YouTubeRanks, YouTubeTotal, YouTubeId } from './youtube.shared';
 
 export type YouTubeUserGeneral = YouTubeGeneral & UserGeneral<YouTubeBranding>;
 
-export interface YouTubeUser
-  extends Data<YouTubeId, YouTubeUserGeneral, YouTubeStatistics, YouTubeRanks> {
+export interface YouTubeUser extends Data<YouTubeId, YouTubeUserGeneral, YouTubeStatistics, YouTubeRanks> {
   misc: YouTubeMisc;
   daily: YouTubeDaily[];
 }

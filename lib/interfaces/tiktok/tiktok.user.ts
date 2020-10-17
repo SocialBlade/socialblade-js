@@ -1,21 +1,7 @@
-import {
-  Data,
-  Daily,
-  Misc,
-  Statistics,
-  SmallBranding,
-  UserGeneral,
-  ExtendedId,
-} from '../matrix.shared';
+import { Data, Daily, Misc, Statistics, SmallBranding, UserGeneral, ExtendedId } from '../matrix.shared';
 import { TikTokRanks, TikTokTotal } from './tiktok.shared';
 
-export interface TikTokUser
-  extends Data<
-    ExtendedId,
-    UserGeneral<SmallBranding>,
-    Statistics<TikTokTotal>,
-    TikTokRanks
-  > {
+export interface TikTokUser extends Data<ExtendedId, UserGeneral<SmallBranding>, Statistics<TikTokTotal>, TikTokRanks> {
   misc: Misc;
   daily: TikTokDaily[];
 }
