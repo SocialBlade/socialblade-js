@@ -1,3 +1,3 @@
-export * from './twitch.user';
-export * from './twitch.top';
-export * from './twitch.shared';
+export * from './user';
+export * from './top';
+export * from './shared';

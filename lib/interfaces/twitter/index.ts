@@ -1,3 +1,3 @@
-export * from './twitter.user';
-export * from './twitter.top';
-export * from './twitter.shared';
+export * from './user';
+export * from './top';
+export * from './shared';

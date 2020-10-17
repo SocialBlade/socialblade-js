@@ -1,3 +1,3 @@
-export * from './tiktok.user';
-export * from './tiktok.top';
-export * from './tiktok.shared';
+export * from './user';
+export * from './top';
+export * from './shared';

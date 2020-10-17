@@ -1,2 +1,2 @@
-export * from './storyfire.user';
-export * from './storyfire.shared';
+export * from './user';
+export * from './shared';

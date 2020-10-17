@@ -1,2 +1,2 @@
-export * from './dlive.user';
-export * from './dlive.shared';
+export * from './user';
+export * from './shared';

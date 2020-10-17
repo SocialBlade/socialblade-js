@@ -1,3 +1,3 @@
-export * from './youtube.user';
-export * from './youtube.top';
-export * from './youtube.shared';
+export * from './user';
+export * from './top';
+export * from './shared';
