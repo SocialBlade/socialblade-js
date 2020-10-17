@@ -21,3 +21,6 @@ export * from './interfaces/dlive';
 
 // StoryFire
 export * from './interfaces/storyfire';
+
+// DailyMotion
+export * from './interfaces/dailymotion';
