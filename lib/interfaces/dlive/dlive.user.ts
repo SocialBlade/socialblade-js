@@ -8,12 +8,7 @@ export interface DLiveUser extends Data<Id, DLiveUserGeneral, Statistics<DLiveTo
   daily: DLiveDaily[];
 }
 
-export interface DLiveDaily extends Daily {
-  followers: number;
-  following: number;
-  videos: number;
-  earnings: number;
-}
+export type DLiveDaily = Daily & DLiveTotal;
 
 export interface DLiveMisc extends Misc {
   age_restriction: boolean;

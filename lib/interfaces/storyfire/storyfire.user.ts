@@ -8,8 +8,4 @@ export interface StoryFireUser extends Data<Id, StoryFireUserGeneral, Statistics
   daily: StoryFireDaily[];
 }
 
-export interface StoryFireDaily extends Daily {
-  followers: number;
-  views: number;
-  videos: number;
-}
+export type StoryFireDaily = Daily & StoryFireTotal;

@@ -6,9 +6,4 @@ export interface TikTokUser extends Data<ExtendedId, UserGeneral<SmallBranding>,
   daily: TikTokDaily[];
 }
 
-export interface TikTokDaily extends Daily {
-  followers: number;
-  following: number;
-  heart: number;
-  uploads: number;
-}
+export type TikTokDaily = Daily & TikTokTotal;

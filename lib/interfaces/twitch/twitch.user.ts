@@ -8,10 +8,7 @@ export interface TwitchUser extends Data<ExtendedId, TwitchUserGeneral, Statisti
   daily: TwitchDaily[];
 }
 
-export interface TwitchDaily extends Daily {
-  followers: number;
-  views: number;
-}
+export type TwitchDaily = Daily & TwitchTotal;
 
 export interface TwitchMisc extends Misc {
   mature_warning: boolean;

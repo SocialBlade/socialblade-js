@@ -11,8 +11,6 @@ export interface TwitchTotal {
   views: number;
 }
 
-export interface TwitchRanks {
+export interface TwitchRanks extends TwitchTotal {
   sbrank: number;
-  followers: number;
-  views: number;
 }
