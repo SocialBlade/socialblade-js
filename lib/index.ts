@@ -18,3 +18,6 @@ export * from './interfaces/tiktok';
 
 // DLive
 export * from './interfaces/dlive';
+
+// StoryFire
+export * from './interfaces/storyfire';
