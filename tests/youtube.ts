@@ -6,10 +6,7 @@ import { expect } from 'chai';
 
 describe('YouTube Client API', function () {
   before('Create Social Blade Client', async function () {
-    this.client = new SocialBlade(
-      process.env.SOCIALBLADE_CLIENT_ID!,
-      process.env.SOCIALBLADE_ACCESS_TOKEN!,
-    );
+    this.client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
   });
 
   describe('YouTube User', function () {
@@ -18,15 +15,11 @@ describe('YouTube Client API', function () {
     });
 
     it('Social Blade has more than 100k subs?', async function () {
-      expect(
-        (this.sbStats as YouTubeUser).statistics.total.subscribers,
-      ).to.be.greaterThan(1e5);
+      expect((this.sbStats as YouTubeUser).statistics.total.subscribers).to.be.greaterThan(1e5);
     });
 
     it('Subscribers should be a number', async function () {
-      expect(
-        (this.sbStats as YouTubeUser).statistics.total.subscribers,
-      ).to.be.a('number');
+      expect((this.sbStats as YouTubeUser).statistics.total.subscribers).to.be.a('number');
     });
 
     it('History should contain 30 days', async function () {
@@ -44,9 +37,7 @@ describe('YouTube Client API', function () {
     });
 
     it('All users should have more the 50m subscribers', async function () {
-      (this.sbTop as YouTubeTop[]).map((user) =>
-        expect(user.statistics.total.subscribers).to.be.greaterThan(5e7),
-      );
+      (this.sbTop as YouTubeTop[]).map((user) => expect(user.statistics.total.subscribers).to.be.greaterThan(5e7));
     });
   });
 });
