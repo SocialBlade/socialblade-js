@@ -4,6 +4,6 @@
 ---
 
 ### TypeScript
-- **50 Credits** [Get a link for the top 500 most Subscribed YouTubers](examples/ts/youtube-top-500.ts)
+- **50 Credits** [Get a link for the top 500 most Subscribed YouTubers](ts/youtube-top-500.ts)
 
 ### ES6+
