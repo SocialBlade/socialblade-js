@@ -1,5 +1,5 @@
 import { Data, Daily, Misc, Statistics, Branding, UserGeneral } from '../matrix.shared';
-import { YouTubeGeneral, YouTubeRanks, YouTubeTotal, YouTubeId } from './youtube.shared';
+import { YouTubeGeneral, YouTubeRanks, YouTubeTotal, YouTubeId } from './shared';
 
 export type YouTubeUserGeneral = YouTubeGeneral & UserGeneral<YouTubeBranding>;
 

@@ -1,5 +1,5 @@
 import { Data, Daily, Misc, Statistics, UserGeneral, Id, SmallBranding } from '../matrix.shared';
-import { StoryFireGeneral, StoryFireRanks, StoryFireTotal } from './storyfire.shared';
+import { StoryFireGeneral, StoryFireRanks, StoryFireTotal } from './shared';
 
 export type StoryFireUserGeneral = StoryFireGeneral & UserGeneral<SmallBranding>;
 

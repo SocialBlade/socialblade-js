@@ -1,5 +1,5 @@
 import { Data, Daily, Misc, Statistics, Branding, UserGeneral, ExtendedId } from '../matrix.shared';
-import { TwitchGeneral, TwitchRanks, TwitchTotal } from './twitch.shared';
+import { TwitchGeneral, TwitchRanks, TwitchTotal } from './shared';
 
 export type TwitchUserGeneral = TwitchGeneral & UserGeneral<Branding>;
 

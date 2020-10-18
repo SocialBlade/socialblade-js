@@ -1,5 +1,5 @@
 import { Data, ExtendedId, Statistics } from '../matrix.shared';
-import { TwitterGeneral, TwitterRanks, TwitterTotal } from './twitter.shared';
+import { TwitterGeneral, TwitterRanks, TwitterTotal } from './shared';
 
 export type TwitterTop = Data<ExtendedId, TwitterGeneral, Statistics<TwitterTotal>, TwitterRanks>;
 

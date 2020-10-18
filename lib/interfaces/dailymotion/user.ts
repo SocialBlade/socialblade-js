@@ -1,5 +1,5 @@
 import { Data, Daily, Misc, Statistics, UserGeneral, Id, SmallBranding } from '../matrix.shared';
-import { DailyMotionGeneral, DailyMotionRanks, DailyMotionTotal } from './dailymotion.shared';
+import { DailyMotionGeneral, DailyMotionRanks, DailyMotionTotal } from './shared';
 
 export type DailyMotionUserGeneral = DailyMotionGeneral & UserGeneral<SmallBranding>;
 
