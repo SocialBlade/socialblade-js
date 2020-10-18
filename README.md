@@ -1,7 +1,7 @@
 # Social Blade API in TypeScript [<img align="right" src="https://socialblade.com/images/media/red/2.png">](https://socialblade.com/b)
 
 [![npm](https://img.shields.io/npm/v/socialblade.svg)](https://www.npmjs.com/package/socialblade)
-[![Social Blade Discord](https://img.shields.io/discord/125022847562285056.svg?label=Social%20Blade%20Discord%20(Not%20for%20Support)&colorB=c84329&maxAge=3600)](https://socialblade.com/discord)
+![Discord](https://img.shields.io/discord/125022847562285056?color=7289DA&label=Discord)
 
 ---
 
@@ -41,8 +41,7 @@ const client = new SocialBlade(SOCIALBLADE_CLIENT_ID, SOCIALBLADE_ACCESS_TOKEN);
 client.youtube.user('socialblade').then(console.log);
 ```
 
-## Examples
-_Examples coming soon._
+##### [Code Examples](examples)
 
 ## Troubleshooting
 If you find an issue with this library feel free to open an issue here on GitHub, or submit a PR and others! 😀  
