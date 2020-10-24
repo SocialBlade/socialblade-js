@@ -7,7 +7,6 @@ import { expect } from 'chai';
 describe('YouTube Client API', function () {
   before('Create Social Blade Client', async function () {
     this.client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
-    console.log(this.client.api);
   });
 
   describe('YouTube User', function () {

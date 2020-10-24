@@ -17,4 +17,6 @@ jobs:
     - run: npm test
       env:
         CI: true
+        SOCIALBLADE_CLIENT_ID: ${{ secrets.SOCIALBLADE_CLIENT_ID }}
+        SOCIALBLADE_ACCESS_TOKEN: ${{ secrets.SOCIALBLADE_ACCESS_TOKEN }}
 
