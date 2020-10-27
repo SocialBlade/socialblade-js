@@ -14,7 +14,7 @@ describe('Trovo Client API', function () {
       this.sbStats = await this.client.trovo.user('socialblade');
     });
 
-    it('Social Blade has more than 1 follower1?', async function () {
+    it('Social Blade has more than 1 follower?', async function () {
       expect((this.sbStats as TrovoUser).statistics.total.followers).to.be.greaterThan(1);
     });
 

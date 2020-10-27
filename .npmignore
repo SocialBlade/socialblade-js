@@ -1,0 +1,12 @@
+lib
+tests
+.editorconfig
+.gitattributes
+.gitmodules
+.github/
+package-lock.json
+yarn.lock
+.env
+.env.example
+tsconfig.json
+examples
