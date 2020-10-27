@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --module commonjs",
     "dev": "ts-node-dev --respawn ./lib/index.ts",
     "test": "mocha --reporter spec --require ts-node/register tests/*.ts",
     "tdd": "mocha --reporter min --require ts-node/register --watch-files tests/ --watch-files lib/ --watch --recursive tests/*.ts",

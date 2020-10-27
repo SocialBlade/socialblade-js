@@ -1,4 +1,7 @@
-export { default } from './client';
+import client from './client';
+export default client;
+// @ts-ignore
+export = client;
 
 // Interfaces
 export * from './interfaces/matrix';
