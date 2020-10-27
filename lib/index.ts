@@ -7,23 +7,12 @@ export = client;
 export * from './interfaces/matrix';
 export * from './interfaces/options';
 
-// YouTube
+// Platforms
 export * from './interfaces/youtube';
-
-// Twitter
 export * from './interfaces/twitter';
-
-// Twitch
 export * from './interfaces/twitch';
-
-// TikTok
 export * from './interfaces/tiktok';
-
-// DLive
 export * from './interfaces/dlive';
-
-// StoryFire
 export * from './interfaces/storyfire';
-
-// DailyMotion
 export * from './interfaces/dailymotion';
+export * from './interfaces/trovo';

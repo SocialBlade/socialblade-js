@@ -9,6 +9,7 @@ import { TikTokTop, TikTokTopFilters, TikTokUser } from './interfaces/tiktok';
 import { DLiveUser } from './interfaces/dlive';
 import { StoryFireUser } from './interfaces/storyfire';
 import { DailyMotionUser } from './interfaces/dailymotion';
+import { TrovoUser } from './interfaces/trovo';
 
 export default class SocialBlade {
   private api: Matrix;
@@ -19,6 +20,7 @@ export default class SocialBlade {
   public dlive: Platform<DLiveUser>;
   public storyfire: Platform<StoryFireUser>;
   public dailymotion: Platform<DailyMotionUser>;
+  public trovo: Platform<TrovoUser>;
 
   constructor(client_id: string, access_token: string, options: Options = {}) {
     this.api = new Matrix(client_id, access_token, options);
@@ -30,5 +32,6 @@ export default class SocialBlade {
     this.dlive = new Platform<DLiveUser>(this.api, 'dlive');
     this.storyfire = new Platform<StoryFireUser>(this.api, 'storyfire');
     this.dailymotion = new Platform<DailyMotionUser>(this.api, 'dailymotion');
+    this.trovo = new Platform<TrovoUser>(this.api, 'trovo');
   }
 }

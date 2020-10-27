@@ -8,7 +8,6 @@ export interface TwitterRanks {
   followers: number;
   following: number;
   tweets: number;
-  engagement: number;
 }
 
 export interface TwitterGeo {
