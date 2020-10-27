@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules"]
+}
