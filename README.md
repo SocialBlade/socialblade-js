@@ -6,7 +6,7 @@
 ---
 
 ### API Information
-Our API allows you to take the power of the Social Blade website and intergrate it directly into your internal systems.
+Our API allows you to take the power of the Social Blade website and integrate it directly into your internal systems.
 
 You gain access to the same public statistical information that is on the website along with our toplists, rankings, and more as we keep expanding it's features!  
 [<img align="right" height="40px" src="https://cdn.t.pics/socialblade-get-started.png">](https://socialblade.com/business-api)
