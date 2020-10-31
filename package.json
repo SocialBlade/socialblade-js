@@ -9,7 +9,8 @@
     "dev": "ts-node-dev --respawn ./lib/index.ts",
     "test": "mocha --reporter spec --require ts-node/register tests/*.ts",
     "tdd": "mocha --reporter min --require ts-node/register --watch-files tests/ --watch-files lib/ --watch --recursive tests/*.ts",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "contest": "mocha --reporter spec --require ts-node/register examples/ts/youtube-top-500.ts"
   },
   "repository": "https://github.com/SocialBlade/socialblade-js",
   "bugs": {

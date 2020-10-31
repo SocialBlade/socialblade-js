@@ -42,12 +42,16 @@ export class PlatformWithTop<U, F, T> extends Platform<U> {
    * Starting from page 1, each response has 100 users which can then be accessed for 24 hours.
    * You can then iterate through the pages you wish to get more results
    *
+   * purchaseTo is can be used to when calling in concurrency to prevent the need to go in order.
+   * This pull will tell the first request that you want to purchase from 0 to the number you set.
+   *
    * Credit break down can be found at https://socialblade.com/b/docs/top-general
    */
-  public async top(query: T = this.defaultFilter, page: number = 0): Promise<F[]> {
+  public async top(query: T = this.defaultFilter, page: number = 0, purchaseTo: number = 0): Promise<F[]> {
     const req = await this.api.get<F[]>(`${this.platform}/top`, {
       query,
       page,
+      'purchase-to': purchaseTo,
     });
     if (!req.status.success) throw req.status.error;
 
