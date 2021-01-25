@@ -13,7 +13,11 @@ You gain access to the same public statistical information that is on the websit
 
 ## Install
 ```bash
+# with npm
 npm install --save socialblade
+
+# with yarn
+yarn add socialblade
 ```
 
 > **Important**: Library does not force any fetch polyfills, If you don't already have a fetch polyfill we recommend using `isomorphic-unfetch` like the tests use.
