@@ -5,7 +5,6 @@ export type TwitterUserGeneral = TwitterGeneral & UserGeneral<TwitterBranding>;
 
 export interface TwitterUser extends Data<ExtendedId, TwitterUserGeneral, Statistics<TwitterTotal>, TwitterRanks> {
   misc: TwitterMisc;
-  tags: string[];
   daily: TwitterDaily[];
 }
 
