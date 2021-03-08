@@ -11,6 +11,7 @@ export * from './interfaces/options';
 
 export * from './interfaces/dailymotion';
 export * from './interfaces/storyfire';
+export * from './interfaces/instagram';
 export * from './interfaces/facebook';
 export * from './interfaces/youtube';
 export * from './interfaces/twitter';
