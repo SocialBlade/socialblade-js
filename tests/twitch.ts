@@ -14,7 +14,7 @@ describe('Twitch Client API', function () {
       this.sbStats = await this.client.twitch.user('socialblade');
     });
 
-    it('Social Blade has more than 50 subs?', async function () {
+    it('Social Blade has more than 50 followers?', async function () {
       expect((this.sbStats as TwitchUser).statistics.total.followers).to.be.greaterThan(50);
     });
 
