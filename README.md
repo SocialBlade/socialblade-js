@@ -8,7 +8,7 @@
 ### API Information
 Our API allows you to take the power of the Social Blade website and integrate it directly into your internal systems.
 
-You gain access to the same public statistical information that is on the website along with our toplists, rankings, and more as we keep expanding it's features!  
+You gain access to the same public statistical information that is on the website along with our toplists, rankings, and more as we keep expanding its features!  
 [<img align="right" height="40px" src="https://cdn.t.pics/socialblade-get-started.png">](https://socialblade.com/business-api)
 
 ## Install
@@ -48,5 +48,5 @@ client.youtube.user('socialblade').then(console.log);
 ##### [Code Examples](examples)
 
 ## Troubleshooting
-If you find an issue with this library feel free to open an issue here on GitHub, or submit a PR and others! 😀  
-If it's an issue when the API open a [support ticket](https://support.socialblade.com).
+If you find an issue with this library, feel free to open an issue here on GitHub, or submit a PR! 😀
+If it's an issue with the API, open a [support ticket](https://support.socialblade.com).
