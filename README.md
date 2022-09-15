@@ -14,19 +14,20 @@ You gain access to the same public statistical information that is on the websit
 ## Install
 ```bash
 # with npm
-npm install --save socialblade
+npm install --save socialblade isomorphic-unfetch
 
 # with yarn
-yarn add socialblade
+yarn add socialblade isomorphic-unfetch
 ```
 
-> **Important**: Library does not force any fetch polyfills, If you don't already have a fetch polyfill we recommend using `isomorphic-unfetch` like the tests use.
+`socialblade-js` does not include its own `fetch` polyfill. The tests use `isomorphic-unfetch` but you can use another if you'd like.
 
 ## Usage
-Import the library into your project and construct a new client which will be used to access the API.  
+Import the library and a `fetch` polyfill into your project and construct a new client which will be used to access the API.  
 
 #### TypeScript
 ```ts
+import fetch from "isomorphic-unfetch";
 import SocialBlade, { YouTubeUser } from 'socialblade';
 
 const client: SocialBlade = new SocialBlade(SOCIALBLADE_CLIENT_ID, SOCIALBLADE_ACCESS_TOKEN);
@@ -37,6 +38,7 @@ const sbUser: YouTubeUser = await client.youtube.user('socialblade');
 
 #### ES6+
 ```js
+const fetch = require("isomorphic-unfetch");
 const SocialBlade = require("socialblade");
 
 const client = new SocialBlade(SOCIALBLADE_CLIENT_ID, SOCIALBLADE_ACCESS_TOKEN);
