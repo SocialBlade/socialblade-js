@@ -1,6 +1,6 @@
 {
   "name": "socialblade",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for Social Blade's Official API in JavaScript (TypeScript)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,14 +24,14 @@
   "author": "Timothy Cole <tim@socialblade.com>",
   "license": "BSD 3-Clause",
   "devDependencies": {
-    "@types/chai": "^4.2.18",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.12.1",
-    "chai": "^4.3.4",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.9",
+    "chai": "^4.3.7",
     "isomorphic-unfetch": "^3.1.0",
-    "mocha": "^9.0.0",
-    "prettier": "^2.3.1",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.2"
+    "mocha": "^10.1.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
   }
 }

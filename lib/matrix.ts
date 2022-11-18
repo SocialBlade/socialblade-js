@@ -3,16 +3,10 @@ import { Response } from './interfaces/matrix';
 import { Options } from './interfaces/options';
 
 export class Matrix {
-  private client_id: string;
-  private access_token: string;
-
   private base_url: string = `https://matrix.sbapis.com/b/`;
   private user_agent: string = 'Social Blade TypeScript Library :: SocialBlade/socialblade-js';
 
-  constructor(client_id: string, access_token: string, { base_url, user_agent }: Options) {
-    this.client_id = client_id;
-    this.access_token = access_token;
-
+  constructor(private client_id: string, private access_token: string, { base_url, user_agent }: Options) {
     if (base_url) this.base_url = base_url;
     if (user_agent) this.user_agent = user_agent;
   }
@@ -25,12 +19,15 @@ export class Matrix {
     return await fetch(`${this.base_url}${path}${method === 'GET' ? qs : ''}`, {
       method,
       body: method !== 'GET' ? data : null,
-      headers: {
-        ...headers,
-        clientid: this.client_id,
-        token: this.access_token,
-        'User-Agent': this.user_agent,
-      },
+      headers:
+        this.client_id === 'socialblade'
+          ? undefined
+          : {
+              ...headers,
+              clientid: this.client_id,
+              token: this.access_token,
+              'User-Agent': this.user_agent,
+            },
     }).then((data) => data.json());
   }
 
