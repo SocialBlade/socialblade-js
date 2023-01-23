@@ -15,7 +15,15 @@ export class Platform<U> {
    * Remember that extended and archive history cost more credits.
    * Find out more at https://socialblade.com/b/docs/user
    */
-  public async user(query: string, history: 'default' | 'extended' | 'archive' = 'default'): Promise<U> {
+  public async user(
+    query: string,
+    history: 'default' | 'extended' | 'archive' | 'vault' = 'default',
+  ): Promise<U> {
+    if (this.platform === 'youtube' && history === 'vault')
+      throw new Error(
+        'YouTube does not support vault history. YouTube requires data to be limited to 3 years.',
+      );
+
     const req = await this.api.get<U>(`${this.platform}/statistics`, {
       query,
       history,
@@ -44,7 +52,10 @@ export class PlatformWithTop<U, F, T> extends Platform<U> {
    *
    * Credit break down can be found at https://socialblade.com/b/docs/top-general
    */
-  public async top(query: T = this.defaultFilter, page: number = 0): Promise<F[]> {
+  public async top(
+    query: T = this.defaultFilter,
+    page: number = 0,
+  ): Promise<F[]> {
     const req = await this.api.get<F[]>(`${this.platform}/top`, {
       query,
       page,

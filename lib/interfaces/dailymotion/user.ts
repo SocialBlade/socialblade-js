@@ -1,10 +1,28 @@
-import { Data, Daily, Misc, Statistics, UserGeneral, Id, SmallBranding } from '../matrix.shared';
-import { DailyMotionGeneral, DailyMotionRanks, DailyMotionTotal } from './shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  Statistics,
+  UserGeneral,
+  Id,
+  SmallBranding,
+} from '../matrix.shared';
+import {
+  DailyMotionGeneral,
+  DailyMotionRanks,
+  DailyMotionTotal,
+} from './shared';
 
-export type DailyMotionUserGeneral = DailyMotionGeneral & UserGeneral<SmallBranding>;
+export type DailyMotionUserGeneral = DailyMotionGeneral &
+  UserGeneral<SmallBranding>;
 
 export interface DailyMotionUser
-  extends Data<Id, DailyMotionUserGeneral, Statistics<DailyMotionTotal>, DailyMotionRanks> {
+  extends Data<
+    Id,
+    DailyMotionUserGeneral,
+    Statistics<DailyMotionTotal>,
+    DailyMotionRanks
+  > {
   misc: DailyMotionMisc;
   daily: DailyMotionDaily[];
 }

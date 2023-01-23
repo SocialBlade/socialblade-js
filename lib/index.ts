@@ -8,7 +8,6 @@ export * from './interfaces/matrix';
 export * from './interfaces/options';
 
 // Platforms
-
 export * from './interfaces/dailymotion';
 export * from './interfaces/storyfire';
 export * from './interfaces/instagram';

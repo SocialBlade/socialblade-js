@@ -20,7 +20,7 @@ npm install --save socialblade
 yarn add socialblade
 ```
 
-> **Important**: Library does not force any fetch polyfills, If you don't already have a fetch polyfill we recommend using `isomorphic-unfetch` like the tests use.
+> **Important**: We do not force any fetch polyfills, If you're using an older version of node non-lts (v18) you may need a fetch polyfill.
 
 ## Usage
 Import the library into your project and construct a new client which will be used to access the API.  
