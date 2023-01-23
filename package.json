@@ -1,12 +1,11 @@
 {
   "name": "socialblade",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library for Social Blade's Official API in JavaScript (TypeScript)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --module commonjs",
-    "dev": "ts-node-dev --respawn ./lib/index.ts",
     "test": "mocha --reporter spec --require ts-node/register tests/*.ts",
     "tdd": "mocha --reporter min --require ts-node/register --watch-files tests/ --watch-files lib/ --watch --recursive tests/*.ts",
     "prepublish": "npm run build"
@@ -25,13 +24,14 @@
   "license": "BSD 3-Clause",
   "devDependencies": {
     "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.0",
-    "@types/node": "^18.11.9",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
     "chai": "^4.3.7",
-    "isomorphic-unfetch": "^3.1.0",
-    "mocha": "^10.1.0",
-    "prettier": "^2.7.1",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.3",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.4"
   }
 }

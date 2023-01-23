@@ -1,12 +1,14 @@
 import SocialBlade, { FacebookTop, FacebookUser } from '../lib/index';
 
-import 'isomorphic-unfetch';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 describe('Facebook Client API', function () {
   before('Create Social Blade Client', async function () {
-    this.client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
+    this.client = new SocialBlade(
+      process.env.SOCIALBLADE_CLIENT_ID!,
+      process.env.SOCIALBLADE_ACCESS_TOKEN!,
+    );
   });
 
   describe('Facebook User', function () {
@@ -15,11 +17,15 @@ describe('Facebook Client API', function () {
     });
 
     it('Social Blade has more than 50 likes?', async function () {
-      expect((this.sbStats as FacebookUser).statistics.total.likes).to.be.greaterThan(50);
+      expect(
+        (this.sbStats as FacebookUser).statistics.total.likes,
+      ).to.be.greaterThan(50);
     });
 
     it('Likes should be a number', async function () {
-      expect((this.sbStats as FacebookUser).statistics.total.likes).to.be.a('number');
+      expect((this.sbStats as FacebookUser).statistics.total.likes).to.be.a(
+        'number',
+      );
     });
 
     it('History should contain 30 days', async function () {
@@ -37,7 +43,9 @@ describe('Facebook Client API', function () {
     });
 
     it('All users should have more the 100M likes', async function () {
-      (this.sbTop as FacebookTop[]).map((user) => expect(user.statistics.total.likes).to.be.greaterThan(1e8));
+      (this.sbTop as FacebookTop[]).map((user) =>
+        expect(user.statistics.total.likes).to.be.greaterThan(1e8),
+      );
     });
   });
 });

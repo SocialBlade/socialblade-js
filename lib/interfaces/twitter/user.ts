@@ -1,9 +1,23 @@
-import { Data, Daily, Misc, ExtendedId, Branding, Statistics, UserGeneral } from '../matrix.shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  ExtendedId,
+  Branding,
+  Statistics,
+  UserGeneral,
+} from '../matrix.shared';
 import { TwitterGeneral, TwitterRanks, TwitterTotal } from './shared';
 
 export type TwitterUserGeneral = TwitterGeneral & UserGeneral<TwitterBranding>;
 
-export interface TwitterUser extends Data<ExtendedId, TwitterUserGeneral, Statistics<TwitterTotal>, TwitterRanks> {
+export interface TwitterUser
+  extends Data<
+    ExtendedId,
+    TwitterUserGeneral,
+    Statistics<TwitterTotal>,
+    TwitterRanks
+  > {
   misc: TwitterMisc;
   daily: TwitterDaily[];
 }

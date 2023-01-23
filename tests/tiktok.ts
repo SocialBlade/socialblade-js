@@ -1,12 +1,14 @@
 import SocialBlade, { TikTokTop, TikTokUser } from '../lib/index';
 
-import 'isomorphic-unfetch';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 describe('TikTok Client API', function () {
   before('Create Social Blade Client', async function () {
-    this.client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
+    this.client = new SocialBlade(
+      process.env.SOCIALBLADE_CLIENT_ID!,
+      process.env.SOCIALBLADE_ACCESS_TOKEN!,
+    );
   });
 
   describe('TikTok User', function () {
@@ -15,11 +17,15 @@ describe('TikTok Client API', function () {
     });
 
     it('Social Blade has more than 2 followers?', async function () {
-      expect((this.sbStats as TikTokUser).statistics.total.followers).to.be.greaterThan(2);
+      expect(
+        (this.sbStats as TikTokUser).statistics.total.followers,
+      ).to.be.greaterThan(2);
     });
 
     it('followers should be a number', async function () {
-      expect((this.sbStats as TikTokUser).statistics.total.followers).to.be.a('number');
+      expect((this.sbStats as TikTokUser).statistics.total.followers).to.be.a(
+        'number',
+      );
     });
 
     it('History should contain 30 days', async function () {
@@ -37,7 +43,9 @@ describe('TikTok Client API', function () {
     });
 
     it('All users should have more the 40m followers', async function () {
-      (this.sbTop as TikTokTop[]).map((user) => expect(user.statistics.total.followers).to.be.greaterThan(4e7));
+      (this.sbTop as TikTokTop[]).map((user) =>
+        expect(user.statistics.total.followers).to.be.greaterThan(4e7),
+      );
     });
   });
 });

@@ -1,9 +1,18 @@
-import { Data, Daily, Misc, Statistics, UserGeneral, Id, SmallBranding } from '../matrix.shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  Statistics,
+  UserGeneral,
+  Id,
+  SmallBranding,
+} from '../matrix.shared';
 import { DLiveGeneral, DLiveRanks, DLiveTotal } from './shared';
 
 export type DLiveUserGeneral = DLiveGeneral & UserGeneral<SmallBranding>;
 
-export interface DLiveUser extends Data<Id, DLiveUserGeneral, Statistics<DLiveTotal>, DLiveRanks> {
+export interface DLiveUser
+  extends Data<Id, DLiveUserGeneral, Statistics<DLiveTotal>, DLiveRanks> {
   misc: DLiveMisc;
   daily: DLiveDaily[];
 }

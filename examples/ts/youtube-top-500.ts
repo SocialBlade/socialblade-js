@@ -1,7 +1,9 @@
 import SocialBlade, { YouTubeTop } from '../../lib'; // from "socialblade"
-import 'isomorphic-unfetch';
 
-const client = new SocialBlade(process.env.SOCIALBLADE_CLIENT_ID!, process.env.SOCIALBLADE_ACCESS_TOKEN!);
+const client = new SocialBlade(
+  process.env.SOCIALBLADE_CLIENT_ID!,
+  process.env.SOCIALBLADE_ACCESS_TOKEN!,
+);
 
 // Costs 10 credits per page / i.e. per 100
 const top = async (total: number): Promise<string[]> => {

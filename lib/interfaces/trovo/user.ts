@@ -1,9 +1,23 @@
-import { Data, Daily, Misc, Statistics, UserGeneral, SmallBranding, ExtendedId } from '../matrix.shared';
+import {
+  Data,
+  Daily,
+  Misc,
+  Statistics,
+  UserGeneral,
+  SmallBranding,
+  ExtendedId,
+} from '../matrix.shared';
 import { TrovoGeneral, TrovoRanks, TrovoTotal } from './shared';
 
 export type TrovoUserGeneral = TrovoGeneral & UserGeneral<SmallBranding>;
 
-export interface TrovoUser extends Data<ExtendedId, TrovoUserGeneral, Statistics<TrovoTotal>, TrovoRanks> {
+export interface TrovoUser
+  extends Data<
+    ExtendedId,
+    TrovoUserGeneral,
+    Statistics<TrovoTotal>,
+    TrovoRanks
+  > {
   misc: TrovoMisc;
   daily: TrovoDaily[];
 }
