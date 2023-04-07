@@ -46,20 +46,20 @@ export interface YouTubeMisc extends Misc {
 }
 
 export interface YouTubeGrowthNumbers {
-  '1': number;
-  '3': number;
-  '7': number;
-  '14': number;
-  '30': number;
-  '60': number;
-  '90': number;
-  '180': number;
-  '365': number;
+  '1'?: number;
+  '3'?: number;
+  '7'?: number;
+  '14'?: number;
+  '30'?: number;
+  '60'?: number;
+  '90'?: number;
+  '180'?: number;
+  '365'?: number;
 }
 
 export interface YouTubeGrowth {
   subs: YouTubeGrowthNumbers;
-  views: YouTubeGrowthNumbers;
+  vidviews: YouTubeGrowthNumbers;
 }
 
 export interface YouTubeStatistics extends Statistics<YouTubeTotal> {

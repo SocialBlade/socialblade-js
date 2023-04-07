@@ -32,6 +32,12 @@ describe('YouTube Client API', function () {
       ).to.be.a('number');
     });
 
+    it('Growth views 365 should be a number', async function () {
+      expect(
+        (this.sbStats as YouTubeUser).statistics.growth.vidviews[365],
+      ).to.be.a('number');
+    });
+
     it('History should contain 30 days', async function () {
       expect((this.sbStats as YouTubeUser).daily.length).to.be.eq(30);
     });
