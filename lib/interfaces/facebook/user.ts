@@ -5,6 +5,7 @@ import {
   Statistics,
   UserGeneral,
   ExtendedId,
+  GrowthNumbers,
 } from '../matrix.shared';
 import { FacebookRanks, FacebookTotal } from './shared';
 
@@ -14,7 +15,7 @@ export interface FacebookUser
   extends Data<
     ExtendedId,
     FacebookUserGeneral,
-    Statistics<FacebookTotal>,
+    FacebookStatistics,
     FacebookRanks
   > {
   misc: Misc;
@@ -24,4 +25,13 @@ export interface FacebookUser
 export interface FacebookDaily extends Daily {
   likes: number;
   talking_about: number;
+}
+
+export interface FacebookGrowth {
+  likes: GrowthNumbers;
+  talking_about: GrowthNumbers;
+}
+
+export interface FacebookStatistics extends Statistics<FacebookTotal> {
+  growth: FacebookGrowth;
 }

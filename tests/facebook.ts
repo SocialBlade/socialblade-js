@@ -31,6 +31,15 @@ describe('Facebook Client API', function () {
     it('History should contain 30 days', async function () {
       expect((this.sbStats as FacebookUser).daily.length).to.be.eq(30);
     });
+
+    it('Growth should be a number', async function () {
+      expect(
+        (this.sbStats as FacebookUser).statistics.growth.likes[30],
+      ).to.be.a('number');
+      expect(
+        (this.sbStats as FacebookUser).statistics.growth.talking_about[30],
+      ).to.be.a('number');
+    });
   });
 
   describe('Facebook Top Lists', function () {

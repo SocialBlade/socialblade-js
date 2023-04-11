@@ -43,3 +43,15 @@ export interface UserGeneral<T = Branding> {
 export interface Statistics<Total> {
   total: Total;
 }
+
+export interface GrowthNumbers {
+  '1'?: number;
+  '3'?: number;
+  '7'?: number;
+  '14'?: number;
+  '30'?: number;
+  '60'?: number;
+  '90'?: number;
+  '180'?: number;
+  '365'?: number;
+}
