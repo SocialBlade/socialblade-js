@@ -6,6 +6,7 @@ import {
   Branding,
   Statistics,
   UserGeneral,
+  GrowthNumbers,
 } from '../matrix.shared';
 import { TwitterGeneral, TwitterRanks, TwitterTotal } from './shared';
 
@@ -15,7 +16,7 @@ export interface TwitterUser
   extends Data<
     ExtendedId,
     TwitterUserGeneral,
-    Statistics<TwitterTotal>,
+    TwitterStatistics,
     TwitterRanks
   > {
   misc: TwitterMisc;
@@ -35,4 +36,13 @@ export interface TwitterDaily extends Daily {
 
 export interface TwitterMisc extends Misc {
   twitter_verified: boolean;
+}
+
+export interface TwitterGrowth {
+  followers: GrowthNumbers;
+  tweets: GrowthNumbers;
+}
+
+export interface TwitterStatistics extends Statistics<TwitterTotal> {
+  growth: TwitterGrowth;
 }

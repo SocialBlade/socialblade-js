@@ -6,13 +6,14 @@ import {
   UserGeneral,
   Id,
   SmallBranding,
+  GrowthNumbers,
 } from '../matrix.shared';
 import { DLiveGeneral, DLiveRanks, DLiveTotal } from './shared';
 
 export type DLiveUserGeneral = DLiveGeneral & UserGeneral<SmallBranding>;
 
 export interface DLiveUser
-  extends Data<Id, DLiveUserGeneral, Statistics<DLiveTotal>, DLiveRanks> {
+  extends Data<Id, DLiveUserGeneral, DLiveStatistics, DLiveRanks> {
   misc: DLiveMisc;
   daily: DLiveDaily[];
 }
@@ -30,4 +31,13 @@ export interface DLiveRecent {
   name: string | null;
   cover: string | null;
   background: string | null;
+}
+
+export interface DLiveGrowth {
+  followers: GrowthNumbers;
+  videos: GrowthNumbers;
+}
+
+export interface DLiveStatistics extends Statistics<DLiveTotal> {
+  growth: DLiveGrowth;
 }

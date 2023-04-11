@@ -35,6 +35,15 @@ describe('Instagram Client API', function () {
     it('History should contain 30 days', async function () {
       expect((this.sbStats as InstagramUser).daily.length).to.be.eq(30);
     });
+
+    it('Growth should be a number', async function () {
+      expect(
+        (this.sbStats as InstagramUser).statistics.growth.followers[30],
+      ).to.be.a('number');
+      expect(
+        (this.sbStats as InstagramUser).statistics.growth.media[30],
+      ).to.be.a('number');
+    });
   });
 
   describe('Instagram Vault', function () {

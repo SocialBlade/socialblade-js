@@ -2,6 +2,7 @@ import {
   Daily,
   Data,
   ExtendedId,
+  GrowthNumbers,
   Misc,
   Statistics,
   UserGeneral,
@@ -20,7 +21,7 @@ export interface InstagramUser
   extends Data<
     ExtendedId,
     InstagramUserGeneral,
-    Statistics<InstagramTotal>,
+    InstagramStatistics,
     InstagramRanks
   > {
   misc: Misc;
@@ -33,4 +34,13 @@ export interface InstagramDaily extends Daily {
   media: number;
   avg_likes: number;
   avg_comments: number;
+}
+
+export interface InstagramGrowth {
+  followers: GrowthNumbers;
+  media: GrowthNumbers;
+}
+
+export interface InstagramStatistics extends Statistics<InstagramTotal> {
+  growth: InstagramGrowth;
 }

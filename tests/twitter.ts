@@ -28,6 +28,15 @@ describe('Twitter Client API', function () {
       );
     });
 
+    it('Growth should be a number', async function () {
+      expect(
+        (this.sbStats as TwitterUser).statistics.growth.followers[30],
+      ).to.be.a('number');
+      expect(
+        (this.sbStats as TwitterUser).statistics.growth.tweets[30],
+      ).to.be.a('number');
+    });
+
     it('History should contain 30 days', async function () {
       expect((this.sbStats as TwitterUser).daily.length).to.be.eq(30);
     });

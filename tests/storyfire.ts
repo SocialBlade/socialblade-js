@@ -31,5 +31,17 @@ describe('StoryFire Client API', function () {
     it('History should contain 30 days', async function () {
       expect((this.sbStats as StoryFireUser).daily.length).to.be.eq(30);
     });
+
+    it('Growth should be a number', async function () {
+      expect(
+        (this.sbStats as StoryFireUser).statistics.growth.followers[30],
+      ).to.be.a('number');
+      expect(
+        (this.sbStats as StoryFireUser).statistics.growth.views[30],
+      ).to.be.a('number');
+      expect(
+        (this.sbStats as StoryFireUser).statistics.growth.videos[30],
+      ).to.be.a('number');
+    });
   });
 });

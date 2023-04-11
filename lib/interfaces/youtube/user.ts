@@ -5,6 +5,7 @@ import {
   Statistics,
   Branding,
   UserGeneral,
+  GrowthNumbers,
 } from '../matrix.shared';
 import {
   YouTubeGeneral,
@@ -45,21 +46,9 @@ export interface YouTubeMisc extends Misc {
   tags: string[];
 }
 
-export interface YouTubeGrowthNumbers {
-  '1'?: number;
-  '3'?: number;
-  '7'?: number;
-  '14'?: number;
-  '30'?: number;
-  '60'?: number;
-  '90'?: number;
-  '180'?: number;
-  '365'?: number;
-}
-
 export interface YouTubeGrowth {
-  subs: YouTubeGrowthNumbers;
-  vidviews: YouTubeGrowthNumbers;
+  subs: GrowthNumbers;
+  vidviews: GrowthNumbers;
 }
 
 export interface YouTubeStatistics extends Statistics<YouTubeTotal> {

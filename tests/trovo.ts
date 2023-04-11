@@ -31,5 +31,11 @@ describe('Trovo Client API', function () {
     it('History should contain more than 7 days', async function () {
       expect((this.sbStats as TrovoUser).daily.length).to.be.greaterThan(7);
     });
+
+    it('Growth should be a number', async function () {
+      expect(
+        (this.sbStats as TrovoUser).statistics.growth.followers[30],
+      ).to.be.a('number');
+    });
   });
 });
