@@ -34,6 +34,7 @@ export interface YouTubeSocial {
   instagram: string | null;
   linkedin: string | null;
   discord: string | null;
+  tiktok: string | null;
 }
 
 export interface YouTubeDaily extends Daily {
@@ -43,7 +44,7 @@ export interface YouTubeDaily extends Daily {
 
 export interface YouTubeMisc extends Misc {
   made_for_kids: boolean;
-  tags: string[];
+  tags?: string[];
 }
 
 export interface YouTubeGrowth {

@@ -7,7 +7,7 @@ export interface Data<Id, General, Statistics, Ranks> {
 
 export interface Id {
   id: string;
-  username: string;
+  username?: string;
 }
 
 export interface ExtendedId extends Id {
@@ -33,7 +33,7 @@ export interface SmallBranding {
 }
 
 export interface Branding extends SmallBranding {
-  banner: string;
+  banner?: string;
 }
 
 export interface UserGeneral<T = Branding> {

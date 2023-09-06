@@ -1,13 +1,14 @@
 import { ExtendedId } from '../matrix.shared';
 
 export interface YouTubeId extends ExtendedId {
-  cusername: string;
+  cusername?: string;
+  handle?: string;
 }
 
 export interface YouTubeGeneral {
   created_at: Date;
-  channel_type: string;
-  geo: YouTubeGeo;
+  channel_type: string | null;
+  geo: YouTubeGeo | null;
 }
 
 export interface YouTubeGeo {
@@ -22,9 +23,9 @@ export interface YouTubeTotal {
 }
 
 export interface YouTubeRanks {
-  sbrank: number;
-  subscribers: number;
-  views: number;
-  country: number;
-  channel_type: number;
+  sbrank: number | null;
+  subscribers: number | null;
+  views: number | null;
+  country: number | null;
+  channel_type: number | null;
 }
